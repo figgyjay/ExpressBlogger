@@ -57,7 +57,7 @@ router.get('/all', function(req, res, next) {
   });
 });
 
-app.get('single/blogs/:blogTitleToFind', (req, res) => {
+router.get('single/blogs/:blogTitleToFind', (req, res) => {
     const blogTitleToFind = req.params.blogTitleToFind
     if (blog.title === req.params.blogTitleToFind){
       return true
@@ -75,7 +75,7 @@ app.get('single/blogs/:blogTitleToFind', (req, res) => {
 
  sampleBlogs[indexOfBlogs] = updatedBlog
 
-  app.delete('/blogs/delete/blogTitleToDelete', (req, res) => {
+  router.delete('/blogs/delete/blogTitleToDelete', (req, res) => {
     console.log("req param", req.params);
   
     const indexOfBlogs = sampleBlogs.findIndex((blogs)=>{
